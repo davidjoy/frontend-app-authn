@@ -1,4 +1,3 @@
-
 import { injectIntl, IntlProvider, mergeConfig } from '@openedx/frontend-base';
 import {
   render, screen,

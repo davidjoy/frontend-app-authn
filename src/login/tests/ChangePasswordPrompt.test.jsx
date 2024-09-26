@@ -1,4 +1,3 @@
-
 import { getConfig, injectIntl, IntlProvider } from '@openedx/frontend-base';
 import {
   fireEvent, render, screen,

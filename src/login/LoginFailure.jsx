@@ -75,6 +75,7 @@ const LoginFailureMessage = (props) => {
             defaultMessage="In order to sign in, you need to activate your account.{lineBreak}
             {lineBreak}We just sent an activation link to {email}. If you do not receive an email,
             check your spam folders or {supportLink}."
+            description="An error message shown to users when they sign in if they have not yet activated their account. It attempts to explain to them how to activate their account by looking for an email from the system."
             values={{
               lineBreak: <br />,
               email: <strong className="data-hj-suppress">{context.email}</strong>,
@@ -161,6 +162,7 @@ const LoginFailureMessage = (props) => {
             <FormattedMessage
               id="login.incorrect.credentials.error.with.reset.link"
               defaultMessage="The username, email, or password you entered is incorrect. Please try again or {resetLink}."
+              description="An error message shown to users if some part of their login information was incorrect."
               values={{ resetLink }}
             />
           </p>

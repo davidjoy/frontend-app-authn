@@ -1,6 +1,8 @@
 import { Provider } from 'react-redux';
 
-import { getConfig, injectIntl, IntlProvider, mergeConfig, sendPageEvent, sendTrackEvent } from '@openedx/frontend-base';
+import {
+  getConfig, injectIntl, IntlProvider, mergeConfig, sendPageEvent, sendTrackEvent
+} from '@openedx/frontend-base';
 import {
   fireEvent, render, screen, waitFor,
 } from '@testing-library/react';
@@ -458,8 +460,8 @@ describe('LoginPage', () => {
     });
 
     const expectedMessage = `${'You have successfully signed into Apple, but your Apple account does not have a '
-                            + 'linked '}${ getConfig().SITE_NAME } account. To link your accounts, sign in now using your ${
-                             getConfig().SITE_NAME } password.`;
+                            + 'linked '}${getConfig().SITE_NAME} account. To link your accounts, sign in now using your ${
+      getConfig().SITE_NAME} password.`;
 
     render(reduxWrapper(<IntlLoginPage {...props} />));
     expect(screen.getByText(

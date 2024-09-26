@@ -25,7 +25,7 @@ const ChangePasswordPrompt = ({ variant, redirectUrl }) => {
       }
     },
   };
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen, open, close] = useToggle(true, handlers);
   const { formatMessage } = useIntl();
   const navigate = useNavigate();

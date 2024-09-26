@@ -185,7 +185,7 @@ describe('EmailField', () => {
           ...initialState.register,
           registrationError: {
             errorCode: 'duplicate-email',
-            email: [{ userMessage: `This email is already associated with an existing or previous ${ getConfig().SITE_NAME } account` }],
+            email: [{ userMessage: `This email is already associated with an existing or previous ${getConfig().SITE_NAME} account` }],
           },
         },
       });

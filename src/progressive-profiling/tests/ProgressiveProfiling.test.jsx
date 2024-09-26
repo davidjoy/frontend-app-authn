@@ -1,6 +1,15 @@
 import { Provider } from 'react-redux';
 
-import { configureI18n, getAuthenticatedUser, getConfig, identifyAuthenticatedUser, injectIntl, IntlProvider, mergeConfig, sendTrackEvent } from '@openedx/frontend-base';
+import {
+  configureI18n,
+  getAuthenticatedUser,
+  getConfig,
+  identifyAuthenticatedUser,
+  injectIntl,
+  IntlProvider,
+  mergeConfig,
+  sendTrackEvent
+} from '@openedx/frontend-base';
 import {
   fireEvent, render, screen,
 } from '@testing-library/react';
