@@ -1,4 +1,4 @@
-import { getConfig } from '@edx/frontend-platform';
+import { getConfig } from '@openedx/frontend-base';
 
 import { DEFAULT_REDIRECT_URL, DEFAULT_STATE, PENDING_STATE } from '../../../data/constants';
 import { RESET_PASSWORD } from '../../../reset-password';

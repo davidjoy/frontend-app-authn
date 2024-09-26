@@ -1,11 +1,8 @@
-import React from 'react';
-
-import { getConfig } from '@edx/frontend-platform';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { getConfig, useIntl } from '@openedx/frontend-base';
 import Zendesk from 'react-zendesk';
 
-import messages from './messages';
 import { REGISTER_EMBEDDED_PAGE } from '../data/constants';
+import messages from './messages';
 
 const ZendeskHelp = () => {
   const { formatMessage } = useIntl();

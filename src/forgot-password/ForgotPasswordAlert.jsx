@@ -1,16 +1,13 @@
-import React from 'react';
-
-import { getConfig } from '@edx/frontend-platform';
-import { FormattedMessage, useIntl } from '@edx/frontend-platform/i18n';
+import { FormattedMessage, getConfig, useIntl } from '@openedx/frontend-base';
 import { Alert } from '@openedx/paragon';
 import { CheckCircle, Error } from '@openedx/paragon/icons';
 import PropTypes from 'prop-types';
 
-import messages from './messages';
 import {
   COMPLETE_STATE, FORBIDDEN_STATE, FORM_SUBMISSION_ERROR, INTERNAL_SERVER_ERROR,
 } from '../data/constants';
 import { PASSWORD_RESET } from '../reset-password/data/constants';
+import messages from './messages';
 
 const ForgotPasswordAlert = (props) => {
   const { formatMessage } = useIntl();
@@ -43,7 +40,7 @@ const ForgotPasswordAlert = (props) => {
           }}
         />
       );
-     break;
+      break;
     case INTERNAL_SERVER_ERROR:
       message = formatMessage(messages['internal.server.error']);
       break;

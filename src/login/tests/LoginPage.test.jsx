@@ -1,9 +1,6 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { getConfig, mergeConfig } from '@edx/frontend-platform';
-import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import { getConfig, injectIntl, IntlProvider, mergeConfig, sendPageEvent, sendTrackEvent } from '@openedx/frontend-base';
 import {
   fireEvent, render, screen, waitFor,
 } from '@testing-library/react';

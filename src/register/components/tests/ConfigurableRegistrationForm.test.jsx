@@ -1,10 +1,8 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { mergeConfig } from '@edx/frontend-platform';
 import {
-  getLocale, injectIntl, IntlProvider,
-} from '@edx/frontend-platform/i18n';
+  getLocale, injectIntl, IntlProvider, mergeConfig
+} from '@openedx/frontend-base';
 import { fireEvent, render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';

@@ -1,6 +1,5 @@
-import React from 'react';
 
-import { injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import { injectIntl, IntlProvider } from '@openedx/frontend-base';
 import {
   render, screen,
 } from '@testing-library/react';

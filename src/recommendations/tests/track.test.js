@@ -1,4 +1,4 @@
-import { sendTrackEvent } from '@edx/frontend-platform/analytics';
+import { sendTrackEvent } from '@openedx/frontend-base';
 
 import {
   eventNames, trackRecommendationClick, trackRecommendationsViewed, trackSkipButtonClicked,

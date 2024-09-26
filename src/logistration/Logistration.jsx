@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
-import { getConfig } from '@edx/frontend-platform';
-import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { getAuthService } from '@edx/frontend-platform/auth';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import {
+  getAuthService, getConfig, sendPageEvent, sendTrackEvent, useIntl
+} from '@openedx/frontend-base';
 import {
   Icon,
   Tab,

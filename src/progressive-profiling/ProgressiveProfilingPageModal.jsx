@@ -1,7 +1,4 @@
-import React from 'react';
-
-import { getConfig } from '@edx/frontend-platform';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { getConfig, useIntl } from '@openedx/frontend-base';
 import { ActionRow, Button, ModalDialog } from '@openedx/paragon';
 import PropTypes from 'prop-types';
 

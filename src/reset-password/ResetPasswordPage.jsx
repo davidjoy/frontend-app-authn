@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
-import { getConfig } from '@edx/frontend-platform';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { getConfig, useIntl } from '@openedx/frontend-base';
 import {
   Form,
   Icon,
@@ -16,6 +15,12 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import BaseContainer from '../base-container';
+import { PasswordField } from '../common-components';
+import {
+  LETTER_REGEX, LOGIN_PAGE, NUMBER_REGEX, RESET_PAGE,
+} from '../data/constants';
+import { getAllPossibleQueryParams, updatePathWithQueryParams, windowScrollTo } from '../data/utils';
 import { resetPassword, validateToken } from './data/actions';
 import {
   FORM_SUBMISSION_ERROR, PASSWORD_RESET_ERROR, PASSWORD_VALIDATION_ERROR, TOKEN_STATE,
@@ -24,12 +29,6 @@ import { resetPasswordResultSelector } from './data/selectors';
 import { validatePassword } from './data/service';
 import messages from './messages';
 import ResetPasswordFailure from './ResetPasswordFailure';
-import BaseContainer from '../base-container';
-import { PasswordField } from '../common-components';
-import {
-  LETTER_REGEX, LOGIN_PAGE, NUMBER_REGEX, RESET_PAGE,
-} from '../data/constants';
-import { getAllPossibleQueryParams, updatePathWithQueryParams, windowScrollTo } from '../data/utils';
 
 const ResetPasswordPage = (props) => {
   const { formatMessage } = useIntl();

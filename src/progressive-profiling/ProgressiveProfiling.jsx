@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
-import { getConfig, snakeCaseObject } from '@edx/frontend-platform';
-import { identifyAuthenticatedUser, sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
 import {
   AxiosJwtAuthService,
-  configure as configureAuth,
+  configureAuth,
   getAuthenticatedUser,
-} from '@edx/frontend-platform/auth';
-import { useIntl } from '@edx/frontend-platform/i18n';
-import { getLoggingService } from '@edx/frontend-platform/logging';
+  getConfig,
+  getLoggingService,
+  identifyAuthenticatedUser,
+  sendPageEvent,
+  sendTrackEvent,
+  snakeCaseObject,
+  useIntl
+} from '@openedx/frontend-base';
 import {
   Alert,
   Form,
@@ -22,10 +25,6 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
-import { saveUserProfile } from './data/actions';
-import { welcomePageContextSelector } from './data/selectors';
-import messages from './messages';
-import ProgressiveProfilingPageModal from './ProgressiveProfilingPageModal';
 import BaseContainer from '../base-container';
 import { RedirectLogistration } from '../common-components';
 import { getThirdPartyAuthContext } from '../common-components/data/actions';
@@ -39,6 +38,10 @@ import {
 import isOneTrustFunctionalCookieEnabled from '../data/oneTrust';
 import { getAllPossibleQueryParams, isHostAvailableInQueryParams } from '../data/utils';
 import { FormFieldRenderer } from '../field-renderer';
+import { saveUserProfile } from './data/actions';
+import { welcomePageContextSelector } from './data/selectors';
+import messages from './messages';
+import ProgressiveProfilingPageModal from './ProgressiveProfilingPageModal';
 
 const ProgressiveProfiling = (props) => {
   const { formatMessage } = useIntl();

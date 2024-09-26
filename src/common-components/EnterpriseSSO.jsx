@@ -1,8 +1,5 @@
-import React from 'react';
-
-import { getConfig } from '@edx/frontend-platform';
-import { useIntl } from '@edx/frontend-platform/i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getConfig, useIntl } from '@openedx/frontend-base';
 import {
   Button, Form,
   Icon,
@@ -10,8 +7,8 @@ import {
 import { Login } from '@openedx/paragon/icons';
 import PropTypes from 'prop-types';
 
-import messages from './messages';
 import { LOGIN_PAGE, SUPPORTED_ICON_CLASSES } from '../data/constants';
+import messages from './messages';
 
 /**
  * This component renders the Single sign-on (SSO) button only for the tpa provider passed

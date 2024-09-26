@@ -1,20 +1,19 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { getConfig, mergeConfig } from '@edx/frontend-platform';
-import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { configure, injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import {
+  configureI18n, getConfig, injectIntl, IntlProvider, mergeConfig, sendPageEvent, sendTrackEvent
+} from '@openedx/frontend-base';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 
-import Logistration from './Logistration';
 import { clearThirdPartyAuthContextErrorMessage } from '../common-components/data/actions';
 import {
   COMPLETE_STATE, LOGIN_PAGE, REGISTER_PAGE,
 } from '../data/constants';
 import { backupLoginForm } from '../login/data/actions';
 import { backupRegistrationForm } from '../register/data/actions';
+import Logistration from './Logistration';
 
 jest.mock('@edx/frontend-platform/analytics', () => ({
   sendPageEvent: jest.fn(),
@@ -84,7 +83,7 @@ describe('Logistration', () => {
       })),
     }));
 
-    configure({
+    configureI18n({
       loggingService: { logError: jest.fn() },
       config: {
         ENVIRONMENT: 'production',

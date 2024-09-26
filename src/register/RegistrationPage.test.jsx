@@ -1,15 +1,15 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { getConfig, mergeConfig } from '@edx/frontend-platform';
-import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
 import {
-  configure, getLocale, injectIntl, IntlProvider,
-} from '@edx/frontend-platform/i18n';
+  configureI18n, getConfig, getLocale, injectIntl, IntlProvider, mergeConfig, sendPageEvent, sendTrackEvent
+} from '@openedx/frontend-base';
 import { fireEvent, render } from '@testing-library/react';
 import { mockNavigate, BrowserRouter as Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 
+import {
+  AUTHN_PROGRESSIVE_PROFILING, COMPLETE_STATE, PENDING_STATE, REGISTER_PAGE,
+} from '../data/constants';
 import {
   backupRegistrationFormBegin,
   clearRegistrationBackendError,
@@ -18,9 +18,6 @@ import {
 } from './data/actions';
 import { INTERNAL_SERVER_ERROR } from './data/constants';
 import RegistrationPage from './RegistrationPage';
-import {
-  AUTHN_PROGRESSIVE_PROFILING, COMPLETE_STATE, PENDING_STATE, REGISTER_PAGE,
-} from '../data/constants';
 
 jest.mock('@edx/frontend-platform/analytics', () => ({
   sendPageEvent: jest.fn(),
@@ -115,7 +112,7 @@ describe('RegistrationPage', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    configure({
+    configureI18n({
       loggingService: { logError: jest.fn() },
       config: {
         ENVIRONMENT: 'production',

@@ -1,17 +1,34 @@
-import React, {
+import {
   useEffect, useMemo, useState,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getConfig } from '@edx/frontend-platform';
-import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import {
+  getConfig,
+  sendPageEvent, sendTrackEvent,
+  useIntl
+} from '@openedx/frontend-base';
 import { Form, Spinner, StatefulButton } from '@openedx/paragon';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import Skeleton from 'react-loading-skeleton';
 
+import {
+  InstitutionLogistration,
+  PasswordField,
+  RedirectLogistration,
+  ThirdPartyAuthAlert,
+} from '../common-components';
+import { getThirdPartyAuthContext as getRegistrationDataFromBackend } from '../common-components/data/actions';
+import EnterpriseSSO from '../common-components/EnterpriseSSO';
+import ThirdPartyAuth from '../common-components/ThirdPartyAuth';
+import {
+  COMPLETE_STATE, PENDING_STATE, REGISTER_PAGE,
+} from '../data/constants';
+import {
+  getAllPossibleQueryParams, getTpaHint, getTpaProvider, isHostAvailableInQueryParams, setCookie,
+} from '../data/utils';
 import ConfigurableRegistrationForm from './components/ConfigurableRegistrationForm';
 import RegistrationFailure from './components/RegistrationFailure';
 import {
@@ -31,21 +48,6 @@ import {
 } from './data/utils';
 import messages from './messages';
 import { EmailField, NameField, UsernameField } from './RegistrationFields';
-import {
-  InstitutionLogistration,
-  PasswordField,
-  RedirectLogistration,
-  ThirdPartyAuthAlert,
-} from '../common-components';
-import { getThirdPartyAuthContext as getRegistrationDataFromBackend } from '../common-components/data/actions';
-import EnterpriseSSO from '../common-components/EnterpriseSSO';
-import ThirdPartyAuth from '../common-components/ThirdPartyAuth';
-import {
-  COMPLETE_STATE, PENDING_STATE, REGISTER_PAGE,
-} from '../data/constants';
-import {
-  getAllPossibleQueryParams, getTpaHint, getTpaProvider, isHostAvailableInQueryParams, setCookie,
-} from '../data/utils';
 
 /**
  * Main Registration Page component

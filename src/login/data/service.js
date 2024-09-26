@@ -1,5 +1,4 @@
-import { getConfig } from '@edx/frontend-platform';
-import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+import { getAuthenticatedHttpClient, getConfig } from '@openedx/frontend-base';
 import * as QueryString from 'query-string';
 
 // eslint-disable-next-line import/prefer-default-export

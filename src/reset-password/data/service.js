@@ -1,5 +1,4 @@
-import { getConfig } from '@edx/frontend-platform';
-import { getHttpClient } from '@edx/frontend-platform/auth';
+import { getConfig, getHttpClient } from '@openedx/frontend-base';
 import formurlencoded from 'form-urlencoded';
 
 // eslint-disable-next-line import/prefer-default-export

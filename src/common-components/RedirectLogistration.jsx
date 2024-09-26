@@ -1,4 +1,4 @@
-import { getConfig } from '@edx/frontend-platform';
+import { getConfig } from '@openedx/frontend-base';
 import PropTypes from 'prop-types';
 import { Navigate } from 'react-router-dom';
 

@@ -1,5 +1,4 @@
-import { getConfig } from '@edx/frontend-platform';
-import { getAuthenticatedHttpClient, getHttpClient } from '@edx/frontend-platform/auth';
+import { getAuthenticatedHttpClient, getConfig, getHttpClient } from '@openedx/frontend-base';
 import * as QueryString from 'query-string';
 
 export async function registerRequest(registrationInformation) {

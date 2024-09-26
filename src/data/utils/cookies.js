@@ -1,4 +1,4 @@
-import { getConfig } from '@edx/frontend-platform';
+import { getConfig } from '@openedx/frontend-base';
 import Cookies from 'universal-cookie';
 
 export default function setCookie(cookieName, cookieValue, cookieExpiry) {

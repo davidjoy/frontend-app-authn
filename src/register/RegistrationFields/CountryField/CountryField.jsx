@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { useIntl } from '@openedx/frontend-base';
 import { FormAutosuggest, FormAutosuggestOption, FormControlFeedback } from '@openedx/paragon';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import validateCountryField, { COUNTRY_CODE_KEY, COUNTRY_DISPLAY_KEY } from './validator';
 import { clearRegistrationBackendError } from '../../data/actions';
 import messages from '../../messages';
+import validateCountryField, { COUNTRY_CODE_KEY, COUNTRY_DISPLAY_KEY } from './validator';
 
 /**
  * Country field wrapper. It accepts following handlers

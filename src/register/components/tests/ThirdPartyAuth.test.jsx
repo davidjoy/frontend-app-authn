@@ -1,10 +1,8 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { getConfig, mergeConfig } from '@edx/frontend-platform';
 import {
-  configure, getLocale, injectIntl, IntlProvider,
-} from '@edx/frontend-platform/i18n';
+  configureI18n, getConfig, getLocale, injectIntl, IntlProvider, mergeConfig
+} from '@openedx/frontend-base';
 import { fireEvent, render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
@@ -107,7 +105,7 @@ describe('ThirdPartyAuth', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    configure({
+    configureI18n({
       loggingService: { logError: jest.fn() },
       config: {
         ENVIRONMENT: 'production',

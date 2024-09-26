@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { getConfig } from '@edx/frontend-platform';
+import { getConfig } from '@openedx/frontend-base';
 import { fireEvent, render } from '@testing-library/react';
 
 import FieldRenderer from '../FieldRenderer';

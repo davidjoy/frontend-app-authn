@@ -1,7 +1,4 @@
-import React from 'react';
-
-import { getConfig } from '@edx/frontend-platform';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { getConfig, useIntl } from '@openedx/frontend-base';
 import { Button, Hyperlink, Icon } from '@openedx/paragon';
 import { Institution } from '@openedx/paragon/icons';
 import PropTypes from 'prop-types';

@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
-import { getConfig } from '@edx/frontend-platform';
-import { getAuthService } from '@edx/frontend-platform/auth';
-import { FormattedMessage, useIntl } from '@edx/frontend-platform/i18n';
+import {
+  FormattedMessage, getAuthService, getConfig, useIntl
+} from '@openedx/frontend-base';
 import { Alert, Hyperlink } from '@openedx/paragon';
 import { Error } from '@openedx/paragon/icons';
 import PropTypes from 'prop-types';
 
+import { windowScrollTo } from '../data/utils';
 import ChangePasswordPrompt from './ChangePasswordPrompt';
 import {
   ACCOUNT_LOCKED_OUT,
@@ -23,7 +24,6 @@ import {
   TPA_AUTHENTICATION_FAILURE,
 } from './data/constants';
 import messages from './messages';
-import { windowScrollTo } from '../data/utils';
 
 const LoginFailureMessage = (props) => {
   const { formatMessage } = useIntl();

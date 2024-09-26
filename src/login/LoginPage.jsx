@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { connect } from 'react-redux';
 
-import { getConfig } from '@edx/frontend-platform';
-import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { injectIntl, useIntl } from '@edx/frontend-platform/i18n';
+import {
+  getConfig, injectIntl, sendPageEvent, sendTrackEvent, useIntl
+} from '@openedx/frontend-base';
 import {
   Form, StatefulButton,
 } from '@openedx/paragon';
@@ -12,15 +12,6 @@ import { Helmet } from 'react-helmet';
 import Skeleton from 'react-loading-skeleton';
 import { Link } from 'react-router-dom';
 
-import AccountActivationMessage from './AccountActivationMessage';
-import {
-  backupLoginFormBegin,
-  dismissPasswordResetBanner,
-  loginRequest,
-} from './data/actions';
-import { INVALID_FORM, TPA_AUTHENTICATION_FAILURE } from './data/constants';
-import LoginFailureMessage from './LoginFailure';
-import messages from './messages';
 import {
   FormGroup,
   InstitutionLogistration,
@@ -43,6 +34,15 @@ import {
   updatePathWithQueryParams,
 } from '../data/utils';
 import ResetPasswordSuccess from '../reset-password/ResetPasswordSuccess';
+import AccountActivationMessage from './AccountActivationMessage';
+import {
+  backupLoginFormBegin,
+  dismissPasswordResetBanner,
+  loginRequest,
+} from './data/actions';
+import { INVALID_FORM, TPA_AUTHENTICATION_FAILURE } from './data/constants';
+import LoginFailureMessage from './LoginFailure';
+import messages from './messages';
 
 const LoginPage = (props) => {
   const {

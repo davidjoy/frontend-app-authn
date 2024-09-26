@@ -1,4 +1,4 @@
-import { getConfig } from '@edx/frontend-platform';
+import { getConfig } from '@openedx/frontend-base';
 import algoliasearch from 'algoliasearch';
 
 // initialize Algolia workers

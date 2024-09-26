@@ -1,4 +1,4 @@
-import { sendTrackEvent } from '@edx/frontend-platform/analytics';
+import { sendTrackEvent } from '@openedx/frontend-base';
 
 export const LINK_TIMEOUT = 300;
 

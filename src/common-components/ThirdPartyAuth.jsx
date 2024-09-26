@@ -1,7 +1,4 @@
-import React from 'react';
-
-import { getConfig } from '@edx/frontend-platform';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { getConfig, useIntl } from '@openedx/frontend-base';
 import {
   Hyperlink, Icon,
 } from '@openedx/paragon';
@@ -10,10 +7,10 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 
-import messages from './messages';
 import {
   ENTERPRISE_LOGIN_URL, LOGIN_PAGE, PENDING_STATE, REGISTER_PAGE,
 } from '../data/constants';
+import messages from './messages';
 
 import {
   RenderInstitutionButton,

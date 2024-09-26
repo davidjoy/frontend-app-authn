@@ -1,12 +1,11 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import { injectIntl, IntlProvider } from '@openedx/frontend-base';
 import { render } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 
-import mockedProductData from './mockedData';
 import RecommendationList from '../RecommendationsList';
+import mockedProductData from './mockedData';
 
 const IntlRecommendationList = injectIntl(RecommendationList);
 const mockStore = configureStore();

@@ -1,8 +1,7 @@
 /* eslint-disable import/no-import-module-exports */
 /* eslint-disable react/function-component-definition */
-import React from 'react';
 
-import { getConfig } from '@edx/frontend-platform';
+import { getConfig } from '@openedx/frontend-base';
 import { render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import {

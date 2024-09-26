@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { getConfig } from '@edx/frontend-platform';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { getConfig, useIntl } from '@openedx/frontend-base';
 import {
   breakpoints,
   Container,
@@ -14,13 +13,13 @@ import {
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
+import { DEFAULT_REDIRECT_URL } from '../data/constants';
 import { EDUCATION_LEVEL_MAPPING, PERSONALIZED } from './data/constants';
 import useAlgoliaRecommendations from './data/hooks/useAlgoliaRecommendations';
 import messages from './messages';
 import RecommendationsLargeLayout from './RecommendationsPageLayouts/LargeLayout';
 import RecommendationsSmallLayout from './RecommendationsPageLayouts/SmallLayout';
 import { LINK_TIMEOUT, trackRecommendationsViewed, trackSkipButtonClicked } from './track';
-import { DEFAULT_REDIRECT_URL } from '../data/constants';
 
 const RecommendationsPage = () => {
   const { formatMessage } = useIntl();

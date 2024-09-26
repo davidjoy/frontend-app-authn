@@ -1,6 +1,6 @@
-import { PERSONALIZED } from './constants';
+import { camelCaseObject } from '@openedx/frontend-base';
 
-const { camelCaseObject } = require('@edx/frontend-platform');
+import { PERSONALIZED } from './constants';
 
 const processCourseSearchResult = (searchResultCourse) => {
   const camelCasedResult = camelCaseObject(searchResultCourse);

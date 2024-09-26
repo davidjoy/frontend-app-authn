@@ -1,9 +1,8 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { getConfig } from '@edx/frontend-platform';
-import { sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import {
+  getConfig, injectIntl, IntlProvider, sendTrackEvent
+} from '@openedx/frontend-base';
 import { useMediaQuery } from '@openedx/paragon';
 import { fireEvent, render } from '@testing-library/react';
 import { useLocation } from 'react-router-dom';

@@ -1,10 +1,8 @@
-import React from 'react';
-
-import { injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import { injectIntl, IntlProvider } from '@openedx/frontend-base';
 import { render } from '@testing-library/react';
 
-import SmallLayout from './SmallLayout';
 import mockedRecommendedProducts from '../data/tests/mockedData';
+import SmallLayout from './SmallLayout';
 
 const IntlRecommendationsSmallLayoutPage = injectIntl(SmallLayout);
 

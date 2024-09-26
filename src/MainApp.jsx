@@ -1,7 +1,4 @@
-import React from 'react';
-
-import { getConfig } from '@edx/frontend-platform';
-import { AppProvider } from '@edx/frontend-platform/react';
+import { AppProvider, getConfig } from '@openedx/frontend-base';
 import { Helmet } from 'react-helmet';
 import { Navigate, Route, Routes } from 'react-router-dom';
 

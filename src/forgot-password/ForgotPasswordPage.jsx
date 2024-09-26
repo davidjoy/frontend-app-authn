@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
-import { getConfig } from '@edx/frontend-platform';
-import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { useIntl } from '@edx/frontend-platform/i18n';
+import {
+  getConfig, sendPageEvent, sendTrackEvent, useIntl
+} from '@openedx/frontend-base';
 import {
   Form,
   Hyperlink,
@@ -17,14 +17,14 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 
-import { forgotPassword, setForgotPasswordFormData } from './data/actions';
-import { forgotPasswordResultSelector } from './data/selectors';
-import ForgotPasswordAlert from './ForgotPasswordAlert';
-import messages from './messages';
 import BaseContainer from '../base-container';
 import { FormGroup } from '../common-components';
 import { DEFAULT_STATE, LOGIN_PAGE, VALID_EMAIL_REGEX } from '../data/constants';
 import { updatePathWithQueryParams, windowScrollTo } from '../data/utils';
+import { forgotPassword, setForgotPasswordFormData } from './data/actions';
+import { forgotPasswordResultSelector } from './data/selectors';
+import ForgotPasswordAlert from './ForgotPasswordAlert';
+import messages from './messages';
 
 const ForgotPasswordPage = (props) => {
   const platformName = getConfig().SITE_NAME;

@@ -1,10 +1,6 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { getConfig, mergeConfig } from '@edx/frontend-platform';
-import { identifyAuthenticatedUser, sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { configure, injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import { configureI18n, getAuthenticatedUser, getConfig, identifyAuthenticatedUser, injectIntl, IntlProvider, mergeConfig, sendTrackEvent } from '@openedx/frontend-base';
 import {
   fireEvent, render, screen,
 } from '@testing-library/react';
@@ -91,7 +87,7 @@ describe('ProgressiveProfilingTests', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    configure({
+    configureI18n({
       loggingService: { logError: jest.fn() },
       config: {
         ENVIRONMENT: 'production',

@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { useIntl } from '@openedx/frontend-base';
 import PropTypes from 'prop-types';
 
 import {

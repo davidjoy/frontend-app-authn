@@ -1,13 +1,13 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {
-  APP_INIT_ERROR, APP_READY, initialize, mergeConfig, subscribe,
-} from '@edx/frontend-platform';
-import { ErrorPage } from '@edx/frontend-platform/react';
+  APP_INIT_ERROR, APP_READY,
+  ErrorPage,
+  initialize, mergeConfig, subscribe,
+} from '@openedx/frontend-base';
 
 import configuration from './config';
 import messages from './i18n';

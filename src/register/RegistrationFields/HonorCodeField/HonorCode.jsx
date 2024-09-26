@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
-import { getConfig } from '@edx/frontend-platform';
-import { FormattedMessage, useIntl } from '@edx/frontend-platform/i18n';
+import { FormattedMessage, getConfig, useIntl } from '@openedx/frontend-base';
 import { Form, Hyperlink } from '@openedx/paragon';
 import PropTypes from 'prop-types';
 

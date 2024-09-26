@@ -1,15 +1,13 @@
-import React from 'react';
-
-import { useIntl } from '@edx/frontend-platform/i18n';
+import { useIntl } from '@openedx/frontend-base';
 import PropTypes from 'prop-types';
 
-import BaseCard from './BaseCard';
-import Footer from './Footer';
 import { createCodeFriendlyProduct, getVariant, useProductType } from '../data/utils';
 import {
   cardBadgesMessages,
 } from '../messages';
 import { trackRecommendationClick } from '../track';
+import BaseCard from './BaseCard';
+import Footer from './Footer';
 
 const ProductCard = ({
   product,

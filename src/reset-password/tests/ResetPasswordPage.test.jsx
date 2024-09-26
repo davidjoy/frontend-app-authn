@@ -1,7 +1,6 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { configure, injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import { configureI18n, injectIntl, IntlProvider } from '@openedx/frontend-base';
 import {
   fireEvent, render, screen,
 } from '@testing-library/react';
@@ -50,7 +49,7 @@ describe('ResetPasswordPage', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    configure({
+    configureI18n({
       loggingService: { logError: jest.fn() },
       config: {
         ENVIRONMENT: 'production',

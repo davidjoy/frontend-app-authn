@@ -1,8 +1,7 @@
 /* eslint-disable import/no-import-module-exports */
 /* eslint-disable react/function-component-definition */
-import React from 'react';
 
-import { fetchAuthenticatedUser, getAuthenticatedUser } from '@edx/frontend-platform/auth';
+import { fetchAuthenticatedUser, getAuthenticatedUser } from '@openedx/frontend-base';
 import { render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import {

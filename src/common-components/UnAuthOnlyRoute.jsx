@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { getConfig } from '@edx/frontend-platform';
-import { fetchAuthenticatedUser, getAuthenticatedUser } from '@edx/frontend-platform/auth';
+import { fetchAuthenticatedUser, getAuthenticatedUser, getConfig } from '@openedx/frontend-base';
 import PropTypes from 'prop-types';
 
 import {

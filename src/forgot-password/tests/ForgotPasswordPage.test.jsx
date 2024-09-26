@@ -1,8 +1,8 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 
-import { mergeConfig } from '@edx/frontend-platform';
-import { configure, injectIntl, IntlProvider } from '@edx/frontend-platform/i18n';
+import {
+  configureI18n, injectIntl, IntlProvider, mergeConfig
+} from '@openedx/frontend-base';
 import {
   fireEvent, render, screen,
 } from '@testing-library/react';
@@ -60,7 +60,7 @@ describe('ForgotPasswordPage', () => {
         username: 'test-user',
       })),
     }));
-    configure({
+    configureI18n({
       loggingService: { logError: jest.fn() },
       config: {
         ENVIRONMENT: 'production',

@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
-import { getConfig } from '@edx/frontend-platform';
-import { getCountryList, getLocale, useIntl } from '@edx/frontend-platform/i18n';
+import {
+  getConfig, getCountryList, getLocale, useIntl
+} from '@openedx/frontend-base';
 import PropTypes from 'prop-types';
 
 import { FormFieldRenderer } from '../../field-renderer';

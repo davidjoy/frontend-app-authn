@@ -1,4 +1,4 @@
-import { camelCaseObject } from '@edx/frontend-platform';
+import { camelCaseObject } from '@openedx/frontend-base';
 import { runSaga } from 'redux-saga';
 
 import initializeMockLogging from '../../../setupTest';
