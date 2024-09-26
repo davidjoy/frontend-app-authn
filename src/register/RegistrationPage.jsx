@@ -245,7 +245,8 @@ const RegistrationPage = (props) => {
       configurableFormFields,
       flags.showMarketingEmailOptInCheckbox,
       totalRegistrationTime,
-      queryParams);
+      queryParams
+    );
 
     // making register call
     dispatch(registerNewUser(payload));

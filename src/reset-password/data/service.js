@@ -1,7 +1,6 @@
 import { getConfig, getHttpClient } from '@openedx/frontend-base';
 import formurlencoded from 'form-urlencoded';
 
-// eslint-disable-next-line import/prefer-default-export
 export async function validateToken(token) {
   const requestConfig = {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

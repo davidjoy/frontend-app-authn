@@ -32,17 +32,19 @@ const RegistrationFailureMessage = (props) => {
   switch (errorCode) {
     case INTERNAL_SERVER_ERROR:
       errorMessage = formatMessage(messages['registration.request.server.error']);
-     break;
+      break;
     case FORBIDDEN_REQUEST:
       errorMessage = formatMessage(messages['registration.rate.limit.error']);
       break;
     case TPA_AUTHENTICATION_FAILURE:
-      errorMessage = formatMessage(messages['registration.tpa.authentication.failure'],
+      errorMessage = formatMessage(
+        messages['registration.tpa.authentication.failure'],
         {
           platform_name: getConfig().SITE_NAME,
           lineBreak: <br />,
           errorMessage: context.errorMessage,
-        });
+        }
+      );
       break;
     case TPA_SESSION_EXPIRED:
       errorMessage = formatMessage(messages['registration.tpa.session.expired'], { provider: context.provider });

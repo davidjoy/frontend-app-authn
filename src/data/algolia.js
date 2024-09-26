@@ -15,6 +15,5 @@ const getLocationRestrictionFilter = (userCountry) => {
 };
 
 export {
-  initializeSearchClient,
-  getLocationRestrictionFilter,
+  getLocationRestrictionFilter, initializeSearchClient
 };

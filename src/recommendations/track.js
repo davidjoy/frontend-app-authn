@@ -37,24 +37,20 @@ export const trackRecommendationsViewed = (recommendedProducts, type, userId) =>
   const viewedProductsList = getProductMapping(recommendedProducts);
 
   if (viewedProductsList && viewedProductsList.length) {
-    sendTrackEvent(
-      eventNames.recommendationsViewed, {
-        page: 'authn_recommendations',
-        recommendation_type: type,
-        products: viewedProductsList,
-        user_id: userId,
-      },
-    );
+    sendTrackEvent(eventNames.recommendationsViewed, {
+      page: 'authn_recommendations',
+      recommendation_type: type,
+      products: viewedProductsList,
+      user_id: userId,
+    });
   }
 };
 
 export const trackSkipButtonClicked = (userId) => {
-  sendTrackEvent(
-    eventNames.skipButtonClicked, {
-      page: 'authn_recommendations',
-      user_id: userId,
-    },
-  );
+  sendTrackEvent(eventNames.skipButtonClicked, {
+    page: 'authn_recommendations',
+    user_id: userId,
+  },);
 };
 
 export default {

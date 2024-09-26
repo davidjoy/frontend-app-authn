@@ -70,8 +70,10 @@ const RecommendationsPage = () => {
   return (
     <>
       <Helmet>
-        <title>{formatMessage(messages['recommendation.page.title'],
-          { siteName: getConfig().SITE_NAME })}
+        <title>{formatMessage(
+          messages['recommendation.page.title'],
+          { siteName: getConfig().SITE_NAME }
+        )}
         </title>
       </Helmet>
       <div className="d-flex flex-column bg-light-200 min-vh-100">

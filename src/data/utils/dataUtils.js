@@ -41,9 +41,7 @@ export const updatePathWithQueryParams = (path) => {
   }
 
   if (queryParams.indexOf('track=pwreset') > -1) {
-    queryParams = queryParams.replace(
-      '?track=pwreset&', '?',
-    ).replace('?track=pwreset', '').replace('&track=pwreset', '').replace('?&', '?');
+    queryParams = queryParams.replace('?track=pwreset&', '?',).replace('?track=pwreset', '').replace('&track=pwreset', '').replace('?&', '?');
   }
 
   return `${path}${queryParams}`;

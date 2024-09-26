@@ -763,8 +763,8 @@ describe('RegistrationPage', () => {
         },
       });
       const { container } = render(routerWrapper(reduxWrapper(
-        <IntlRegistrationPage {...props} />),
-      ));
+        <IntlRegistrationPage {...props} />
+      )));
 
       const usernameFeedback = container.querySelector('div[feedback-for="username"]');
       const emailFeedback = container.querySelector('div[feedback-for="email"]');

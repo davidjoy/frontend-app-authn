@@ -73,7 +73,10 @@ const CountryField = (props) => {
     const { value } = event.target;
 
     const { error } = validateCountryField(
-      value.trim(), countryList, formatMessage(messages['empty.country.field.error']), formatMessage(messages['invalid.country.field.error']),
+      value.trim(),
+      countryList,
+      formatMessage(messages['empty.country.field.error']),
+      formatMessage(messages['invalid.country.field.error'])
     );
     handleErrorChange('country', error);
   };
@@ -85,7 +88,10 @@ const CountryField = (props) => {
   };
 
   const handleOnChange = (value) => {
-    onChangeHandler({ target: { name: 'country' } }, { countryCode: value.selectionId, displayValue: value.userProvidedText });
+    onChangeHandler(
+      { target: { name: 'country' } },
+      { countryCode: value.selectionId, displayValue: value.userProvidedText }
+    );
 
     // We have put this check because proviously we also had onSelected event handler and we call
     // the onBlur on that event handler but now there is no such handler and we only have

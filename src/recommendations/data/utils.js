@@ -61,7 +61,6 @@ export const filterLocationRestriction = (products, countryCode) => products.fil
     }
   }
   return true;
-},
-);
+});
 
 export default convertCourseRunKeyToCourseKey;

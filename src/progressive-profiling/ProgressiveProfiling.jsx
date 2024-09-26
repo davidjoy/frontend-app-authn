@@ -201,8 +201,10 @@ const ProgressiveProfiling = (props) => {
   return (
     <BaseContainer showWelcomeBanner fullName={authenticatedUser?.fullName || authenticatedUser?.name}>
       <Helmet>
-        <title>{formatMessage(messages['progressive.profiling.page.title'],
-          { siteName: getConfig().SITE_NAME })}
+        <title>{formatMessage(
+          messages['progressive.profiling.page.title'],
+          { siteName: getConfig().SITE_NAME }
+        )}
         </title>
       </Helmet>
       <ProgressiveProfilingPageModal isOpen={showModal} redirectUrl={registrationResult.redirectUrl} />

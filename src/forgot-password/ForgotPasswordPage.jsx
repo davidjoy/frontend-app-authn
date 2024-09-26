@@ -97,8 +97,11 @@ const ForgotPasswordPage = (props) => {
   return (
     <BaseContainer>
       <Helmet>
-        <title>{formatMessage(messages['forgot.password.page.title'],
-          { siteName: getConfig().SITE_NAME })}
+        <title>
+          {formatMessage(
+            messages['forgot.password.page.title'],
+            { siteName: getConfig().SITE_NAME }
+          )}
         </title>
       </Helmet>
       <div>
