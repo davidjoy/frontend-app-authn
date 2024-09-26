@@ -18,7 +18,16 @@ import ResetPasswordPage from '../ResetPasswordPage';
 const mockedNavigator = jest.fn();
 const token = '1c-bmjdkc-5e60e084cf8113048ca7';
 
-jest.mock('@edx/frontend-platform/auth');
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
+  getHttpClient: jest.fn(() => ({
+    post: async () => ({
+      data: {},
+      catch: () => {},
+    }),
+  })),
+}));
+
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom')),
   useNavigate: () => mockedNavigator,
@@ -83,15 +92,6 @@ describe('ResetPasswordPage', () => {
         status: TOKEN_STATE.VALID,
       },
     });
-
-    jest.mock('@edx/frontend-platform/auth', () => ({
-      getHttpClient: jest.fn(() => ({
-        post: async () => ({
-          data: {},
-          catch: () => {},
-        }),
-      })),
-    }));
 
     store.dispatch = jest.fn(store.dispatch);
     render(reduxWrapper(<IntlResetPasswordPage {...props} />));

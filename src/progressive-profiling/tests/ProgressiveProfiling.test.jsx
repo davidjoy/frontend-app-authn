@@ -21,16 +21,13 @@ import ProgressiveProfiling from '../ProgressiveProfiling';
 const IntlProgressiveProfilingPage = injectIntl(ProgressiveProfiling);
 const mockStore = configureStore();
 
-jest.mock('@edx/frontend-platform/analytics', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   sendPageEvent: jest.fn(),
   sendTrackEvent: jest.fn(),
   identifyAuthenticatedUser: jest.fn(),
-}));
-jest.mock('@edx/frontend-platform/auth', () => ({
-  configure: jest.fn(),
+  configureAuth: jest.fn(),
   getAuthenticatedUser: jest.fn(),
-}));
-jest.mock('@edx/frontend-platform/logging', () => ({
   getLoggingService: jest.fn(),
 }));
 jest.mock('react-router-dom', () => {

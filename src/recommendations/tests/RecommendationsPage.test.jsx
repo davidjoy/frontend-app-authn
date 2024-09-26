@@ -18,7 +18,8 @@ import { eventNames, getProductMapping } from '../track';
 const IntlRecommendationsPage = injectIntl(RecommendationsPage);
 const mockStore = configureStore();
 
-jest.mock('@edx/frontend-platform/analytics', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   sendTrackEvent: jest.fn(),
 }));
 

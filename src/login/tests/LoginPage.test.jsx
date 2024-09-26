@@ -13,11 +13,10 @@ import { backupLoginFormBegin, dismissPasswordResetBanner, loginRequest } from '
 import { INTERNAL_SERVER_ERROR } from '../data/constants';
 import LoginPage from '../LoginPage';
 
-jest.mock('@edx/frontend-platform/analytics', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   sendPageEvent: jest.fn(),
   sendTrackEvent: jest.fn(),
-}));
-jest.mock('@edx/frontend-platform/auth', () => ({
   getAuthService: jest.fn(),
 }));
 

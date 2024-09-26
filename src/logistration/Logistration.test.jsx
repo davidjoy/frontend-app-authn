@@ -15,11 +15,16 @@ import { backupLoginForm } from '../login/data/actions';
 import { backupRegistrationForm } from '../register/data/actions';
 import Logistration from './Logistration';
 
-jest.mock('@edx/frontend-platform/analytics', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   sendPageEvent: jest.fn(),
   sendTrackEvent: jest.fn(),
+  getAuthenticatedUser: jest.fn(() => ({
+    userId: 3,
+    username: 'test-user',
+  })),
+  getAuthService: jest.fn(() => null),
 }));
-jest.mock('@edx/frontend-platform/auth');
 
 const mockStore = configureStore();
 const IntlLogistration = injectIntl(Logistration);
@@ -76,12 +81,6 @@ describe('Logistration', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    jest.mock('@edx/frontend-platform/auth', () => ({
-      getAuthenticatedUser: jest.fn(() => ({
-        userId: 3,
-        username: 'test-user',
-      })),
-    }));
 
     configureI18n({
       loggingService: { logError: jest.fn() },

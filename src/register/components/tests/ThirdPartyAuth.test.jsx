@@ -12,12 +12,10 @@ import {
 } from '../../../data/constants';
 import RegistrationPage from '../../RegistrationPage';
 
-jest.mock('@edx/frontend-platform/analytics', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   sendPageEvent: jest.fn(),
   sendTrackEvent: jest.fn(),
-}));
-jest.mock('@edx/frontend-platform/i18n', () => ({
-  ...jest.requireActual('@edx/frontend-platform/i18n'),
   getLocale: jest.fn(),
 }));
 
@@ -402,7 +400,7 @@ describe('ThirdPartyAuth', () => {
       });
 
       const expectedMessage = `${'You\'ve successfully signed into Apple! We just need a little more information before '
-                              + 'you start learning with '}${ getConfig().SITE_NAME }.`;
+                              + 'you start learning with '}${getConfig().SITE_NAME}.`;
 
       const { container } = render(routerWrapper(reduxWrapper(<IntlRegistrationPage {...props} />)));
       const tpaAlert = container.querySelector('#tpa-alert p');

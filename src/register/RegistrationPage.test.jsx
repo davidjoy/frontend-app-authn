@@ -19,12 +19,10 @@ import {
 import { INTERNAL_SERVER_ERROR } from './data/constants';
 import RegistrationPage from './RegistrationPage';
 
-jest.mock('@edx/frontend-platform/analytics', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   sendPageEvent: jest.fn(),
   sendTrackEvent: jest.fn(),
-}));
-jest.mock('@edx/frontend-platform/i18n', () => ({
-  ...jest.requireActual('@edx/frontend-platform/i18n'),
   getLocale: jest.fn(),
 }));
 
@@ -372,7 +370,7 @@ describe('RegistrationPage', () => {
 
     it('should set errors with validations returned by registration api', () => {
       const usernameError = 'It looks like this username is already taken';
-      const emailError = `This email is already associated with an existing or previous ${ getConfig().SITE_NAME } account`;
+      const emailError = `This email is already associated with an existing or previous ${getConfig().SITE_NAME} account`;
       store = mockStore({
         ...initialState,
         register: {

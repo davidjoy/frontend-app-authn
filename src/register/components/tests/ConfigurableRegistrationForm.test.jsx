@@ -12,12 +12,10 @@ import { FIELDS } from '../../data/constants';
 import RegistrationPage from '../../RegistrationPage';
 import ConfigurableRegistrationForm from '../ConfigurableRegistrationForm';
 
-jest.mock('@edx/frontend-platform/analytics', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   sendPageEvent: jest.fn(),
   sendTrackEvent: jest.fn(),
-}));
-jest.mock('@edx/frontend-platform/i18n', () => ({
-  ...jest.requireActual('@edx/frontend-platform/i18n'),
   getLocale: jest.fn(),
 }));
 

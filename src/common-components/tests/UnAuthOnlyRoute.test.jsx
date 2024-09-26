@@ -11,7 +11,8 @@ import {
 import { UnAuthOnlyRoute } from '..';
 import { REGISTER_PAGE } from '../../data/constants';
 
-jest.mock('@edx/frontend-platform/auth', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   getAuthenticatedUser: jest.fn(),
   fetchAuthenticatedUser: jest.fn(),
 }));

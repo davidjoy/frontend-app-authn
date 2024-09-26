@@ -16,11 +16,16 @@ import ForgotPasswordPage from '../ForgotPasswordPage';
 
 const mockedNavigator = jest.fn();
 
-jest.mock('@edx/frontend-platform/analytics', () => ({
+jest.mock('@openedx/frontend-base', () => ({
+  ...jest.requireActual('@openedx/frontend-base'),
   sendPageEvent: jest.fn(),
   sendTrackEvent: jest.fn(),
+  getAuthenticatedUser: jest.fn(() => ({
+    userId: 3,
+    username: 'test-user',
+  })),
 }));
-jest.mock('@edx/frontend-platform/auth');
+
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom')),
   useNavigate: () => mockedNavigator,
@@ -54,12 +59,7 @@ describe('ForgotPasswordPage', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    jest.mock('@edx/frontend-platform/auth', () => ({
-      getAuthenticatedUser: jest.fn(() => ({
-        userId: 3,
-        username: 'test-user',
-      })),
-    }));
+
     configureI18n({
       loggingService: { logError: jest.fn() },
       config: {
