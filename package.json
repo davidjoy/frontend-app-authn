@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/openedx/frontend-app-authn.git"
   },
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "sideEffects": false,
   "browserslist": [
     "extends @edx/browserslist-config"
   ],
