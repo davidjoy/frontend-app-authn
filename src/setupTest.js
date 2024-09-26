@@ -1,8 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable max-classes-per-file */
 
-import { getConfig } from '@edx/frontend-platform';
-import { configure as configureLogging } from '@edx/frontend-platform/logging';
+import siteConfig from 'site.config';
+
+import { configureLogging, getConfig, mergeConfig } from '@openedx/frontend-base';
+
+mergeConfig(siteConfig);
 
 class MockLoggingService {
   logInfo = jest.fn();

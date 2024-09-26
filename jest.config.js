@@ -1,7 +1,7 @@
-const { createConfig } = require('@openedx/frontend-build');
+const { createConfig } = require('@openedx/frontend-base/config');
 
-module.exports = createConfig('jest', {
-  setupFiles: [
+module.exports = createConfig('test', {
+  setupFilesAfterEnv: [
     '<rootDir>/src/setupTest.js',
   ],
   coveragePathIgnorePatterns: [
@@ -10,5 +10,9 @@ module.exports = createConfig('jest', {
     'src/index.jsx',
     'MainApp.jsx',
   ],
+  moduleNameMapper: {
+    '\\.svg$': '<rootDir>/src/__mocks__/svg.js',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/src/__mocks__/file.js',
+  },
   testEnvironment: 'jsdom',
 });
